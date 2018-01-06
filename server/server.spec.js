@@ -30,4 +30,13 @@ describe('Server', () => {
         .end(done);
     });
   });
+
+  describe('spy', () => {
+    it('should be called', () => {
+      const spy = expect.createSpy();
+      spy('name', 12);
+
+      expect(spy).toHaveBeenCalledWith('name', 12);
+    });
+  });
 });
